@@ -10,14 +10,20 @@ namespace Asteroids
     {
         static void Main(string[] args)
         {
-            Form form = new Form();
-            form.Width = 1980;
-            form.Height = 1080;
-            Game.Init(form);
-            form.Show();
-            Game.Load();
-            Game.Draw();
-            Application.Run(form);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+            if(Form1.Close != null)
+            {
+                Form form = new Form();
+                form.Width = 1600;
+                form.Height = 600;
+                Game.Init(form);
+                form.Show();
+                Game.Load();
+                Game.Draw();
+                Application.Run(form);
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Asteroids
             Width = form.ClientSize.Width;
             Height = form.ClientSize.Height;
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
-            Timer timer = new Timer { Interval = 40 };
+            Timer timer = new Timer { Interval = 45 };
             timer.Start();
             timer.Tick += Timer_Tick;
         }
@@ -32,23 +32,34 @@ namespace Asteroids
             Update();
         }
         public static BaseObject[] _objs;
+
         public static void Load()
         {
             Random random = new Random();
-            _objs = new Star[80];
-            for (int i = 0; i < _objs.Length; i++)
+            _objs = new BaseObject[40];
+
+
+            // генерация объектов, отталкивающхся от границ экрана
+            for (int i = (_objs.Length/4) * 3; i < _objs.Length; i++)
             {
-                int x = random.Next(0, 10);
-                _objs[i] = new Star(new Point(600, i * 20), new Point(15 - i, 15 - i), new Size(10 + x, 10 + x));
+                int b = random.Next(-300, 300);
+                int c = random.Next(-7, 7);
+                int d = random.Next(-7, 7);
+                int f = random.Next(-200, 200);
+                _objs[i] = new BaseObject(new Point(400 + b, 400 + f), new Point(c, d), new Size(25, 32));
+            }
+            // генерация объектов, летящих прямо
+            for (int i = 0; i < _objs.Length / 4 * 3; i++)
+            {
+                int a = random.Next(-2, 2);
+                int b = random.Next(-800, 800);
+                int c = random.Next(-15, -5);
+                _objs[i] = new Star(new Point(800 + b, i * (18 + a)), new Point(-2 + c, 0), new Size(50, 20));
             }
         }
 
         public static void Draw()
         {
-            // Проверяем вывод графики
-            Buffer.Graphics.Clear(Color.Black);
-            Buffer.Render();
-
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _objs)
                 obj.Draw();

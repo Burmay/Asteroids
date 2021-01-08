@@ -8,17 +8,22 @@ namespace Asteroids
         protected Point Pos;
         protected Point Dir;
         protected Size Size;
+        Image meteor;
         public BaseObject(Point pos, Point dir, Size size)
         {
             Pos = pos;
             Dir = dir;
             Size = size;
+            meteor = Image.FromFile("medium.jpg");
         }
-        public void Draw()
+
+        public virtual void Draw()
         {
-            Game.Buffer.Graphics.DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
+            RectangleF rect = new RectangleF(Pos.X, Pos.Y, Size.Width, Size.Height);
+            Game.Buffer.Graphics.DrawImage(meteor, rect);
+            //Game.Buffer.Graphics.DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
         }
-        public void Update()
+        public virtual void Update()
         {
             Pos.X = Pos.X + Dir.X;
             Pos.Y = Pos.Y + Dir.Y;

@@ -16,5 +16,37 @@ namespace Asteroids
         {
             InitializeComponent();
         }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        public static int? Close { get; set; } = 0;
+        public void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Close = null;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        Image Background = Image.FromFile("Apocalypse.png");
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            panel2.BackgroundImage = Background;
+        }
     }
 }
