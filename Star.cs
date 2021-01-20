@@ -22,7 +22,7 @@ namespace Asteroids
         public override void Update()
         {
             Pos.X = Pos.X - Dir.X;
-            if (Pos.X > Game.Width) Pos.X = Size.Width;
+            if (Pos.X > Game.Width) Pos.X = 0;
         }
 
     }

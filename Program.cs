@@ -15,7 +15,11 @@ namespace Asteroids
             Application.Run(new Form1());
             if(Form1.Close != null)
             {
-                Form form = new Form();
+                Form form = new Form
+                {
+                    Width = Screen.PrimaryScreen.Bounds.Width,
+                    Height = Screen.PrimaryScreen.Bounds.Height
+                };
                 form.Width = 1600;
                 form.Height = 600;
                 Game.Init(form);
