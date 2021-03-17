@@ -39,11 +39,12 @@ namespace Asteroids
         public static BaseObject[] _objs;
         private static Bullet _bullet;
         private static Asteroid[] _asteroid;
+        //private static Asteroid[] _asteroids;
         public static void Load()
         {
             Random random = new Random();
             _objs = new BaseObject[30];
-            _asteroid = new Asteroid[20];
+            _asteroid = new Asteroid[50];
             _bullet = new Bullet(new Point(0, 200), new Point(5, 0), new Size(4, 1));
 
 
@@ -87,8 +88,6 @@ namespace Asteroids
                 if (obj.Collision(_bullet))
                 {
                     System.Media.SystemSounds.Hand.Play();
-                    obj.Reload();
-                    _bullet.Reload();
                 }
             }
                 _bullet.Update();
