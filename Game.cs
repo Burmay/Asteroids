@@ -25,36 +25,44 @@ namespace Asteroids
             Timer timer = new Timer { Interval = 45 };
             timer.Start();
             timer.Tick += Timer_Tick;
+            if(Game.Height > 1000 || Game.Height < 0 || Game.Width > 3000 || Game.Height < 0)
+            {
+                throw new NotImplementedException();
+            }
         }
+
         private static void Timer_Tick(object sender, EventArgs e)
         {
             Draw();
             Update();
         }
         public static BaseObject[] _objs;
-
+        private static Bullet _bullet;
+        private static Asteroid[] _asteroid;
         public static void Load()
         {
             Random random = new Random();
-            _objs = new BaseObject[40];
+            _objs = new BaseObject[30];
+            _asteroid = new Asteroid[20];
+            _bullet = new Bullet(new Point(0, 200), new Point(5, 0), new Size(4, 1));
 
 
-            // генерация объектов, отталкивающхся от границ экрана
-            for (int i = (_objs.Length/4) * 3; i < _objs.Length; i++)
+            // генерация астероидов
+            for (int i = 0; i < _asteroid.Length; i++)
             {
-                int b = random.Next(-300, 300);
+                int b = random.Next(-300, 400);
                 int c = random.Next(-7, 7);
                 int d = random.Next(-7, 7);
-                int f = random.Next(-200, 200);
-                _objs[i] = new BaseObject(new Point(400 + b, 400 + f), new Point(c, d), new Size(25, 32));
+                int f = random.Next(-300, 300);
+                _asteroid[i] = new Asteroid(new Point(1200 + b, 300 + f), new Point(c, d), new Size(24, 32));
             }
             // генерация объектов, летящих прямо
-            for (int i = 0; i < _objs.Length / 4 * 3; i++)
+            for (int i = 0; i < _objs.Length; i++)
             {
                 int a = random.Next(-2, 2);
                 int b = random.Next(-800, 800);
                 int c = random.Next(-15, -5);
-                _objs[i] = new Star(new Point(800 + b, i * (18 + a)), new Point(-2 + c, 0), new Size(50, 20));
+                _objs[i] = new Star(new Point(800 + b, i * (18 + a)), new Point(-2 + c, 0), new Size(20, 20));
             }
         }
 
@@ -63,6 +71,9 @@ namespace Asteroids
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _objs)
                 obj.Draw();
+            foreach (Asteroid obj in _asteroid)
+                obj.Draw();
+            _bullet.Draw();
             Buffer.Render();
         }
 
@@ -70,8 +81,18 @@ namespace Asteroids
         {
             foreach (BaseObject obj in _objs)
                 obj.Update();
+            foreach (Asteroid obj in _asteroid)
+            {
+                obj.Update();
+                if (obj.Collision(_bullet))
+                {
+                    System.Media.SystemSounds.Hand.Play();
+                    obj.Reload();
+                    _bullet.Reload();
+                }
+            }
+                _bullet.Update();
         }
-
     }
 
 }

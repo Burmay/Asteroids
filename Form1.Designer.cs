@@ -29,6 +29,7 @@ namespace Asteroids
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_New_Game = new System.Windows.Forms.Button();
             this.button_Records = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace Asteroids
             // 
             // button_New_Game
             // 
+            this.button_New_Game.Cursor = System.Windows.Forms.Cursors.Default;
             this.button_New_Game.Location = new System.Drawing.Point(12, 13);
             this.button_New_Game.Name = "button_New_Game";
             this.button_New_Game.Size = new System.Drawing.Size(163, 94);
@@ -68,9 +70,12 @@ namespace Asteroids
             // 
             // panel2
             // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.button_Exit);
             this.panel2.Controls.Add(this.button_New_Game);
             this.panel2.Controls.Add(this.button_Records);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Cross;
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(824, 605);
