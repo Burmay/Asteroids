@@ -32,9 +32,6 @@ namespace Asteroids
             Game.Init(this);
             Game.Load();
             Game.Draw();
-            //Timer timer = new Timer { Interval = 45 };
-            //timer.Start();
-            //timer.Tick += Timer_Tick;
         }
 
         private void button2_Click(object sender, EventArgs e)
