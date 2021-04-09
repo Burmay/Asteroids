@@ -3,6 +3,7 @@ using System.Drawing;
 
 namespace Asteroids
 {
+    public delegate void Message();
     interface ICollision
     {
         bool Collision(ICollision obj);

@@ -47,6 +47,7 @@ namespace Asteroids
             this.button_New_Game.Text = "New Game";
             this.button_New_Game.UseVisualStyleBackColor = true;
             this.button_New_Game.Click += new System.EventHandler(this.button1_Click);
+            this.button_New_Game.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_New_Game_KeyDown);
             // 
             // button_Records
             // 
@@ -88,8 +89,10 @@ namespace Asteroids
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 601);
             this.Controls.Add(this.panel2);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

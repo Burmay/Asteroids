@@ -18,3 +18,18 @@ C:\Users\Professional\Desktop\Asteroids — копия\Asteroids\obj\Debug\Aster
 C:\Users\Professional\Desktop\Asteroids — копия\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
 C:\Users\Professional\Desktop\Asteroids — копия\Asteroids\obj\Debug\Asteroids.exe
 C:\Users\Professional\Desktop\Asteroids — копия\Asteroids\obj\Debug\Asteroids.pdb
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\bin\Debug\Asteroids.exe.config
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\bin\Debug\Asteroids.exe
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\bin\Debug\Asteroids.pdb
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.csprojAssemblyReference.cache
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.Form1.resources
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.Properties.Resources.resources
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.csproj.GenerateResource.cache
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.exe
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.pdb
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\bin\Debug\Asteroids.exe.manifest
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\bin\Debug\Asteroids.application
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.exe.manifest
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.application
+C:\Users\Professional\Desktop\Programming\Asteroids\Asteroids\obj\Debug\Asteroids.FormRecords.resources

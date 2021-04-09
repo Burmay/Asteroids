@@ -32,11 +32,13 @@ namespace Asteroids
             Game.Init(this);
             Game.Load();
             Game.Draw();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            FormRecords formRecords = new FormRecords();
+            formRecords.Show();
         }
         public static int? Close { get; set; } = 0;
         public void button3_Click(object sender, EventArgs e)
@@ -53,6 +55,21 @@ namespace Asteroids
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             panel2.BackgroundImage = Background;
+        }
+
+        //private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    Game.Form_KeyDown(sender, e);
+        //}
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Game.Form_KeyDown(sender, e);
+        }
+
+        private void button_New_Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            Game.Form_KeyDown(sender, e);
         }
     }
 }

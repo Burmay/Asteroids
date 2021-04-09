@@ -19,8 +19,8 @@ namespace Asteroids
         }
         public override void Update()
         {
-            Pos.X = Pos.X + 8;
-            if (Pos.X > Game.Width) Pos.X = 0;
+            Pos.X = Pos.X + 30;
+            //if (Pos.X > Game.Width) Pos.X = 0;
         }
         public void Reload()
         {
